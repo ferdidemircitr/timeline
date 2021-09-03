@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #ccd0d4;
+}
+.container{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+.timeline{
+    position: relative;
+    max-width: 800px;
+    width: 80%;
+    margin: 2rem;
+}
+.timeline::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+.timeline ul{
+    list-style-type: none;
+}
+.timeline ul li{
+    position: relative;
+    width: calc(50% - 40px );
+    background-color: #fff;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+}
+.timeline ul li:hover::before{
+    background-color: #fde100;
+}
+.timeline ul li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+.timeline ul li:last-child{
+    margin-bottom: 2rem;
+}
+.timeline ul li:nth-child(odd){
+    float: left;
+    clear: right;
+    border-radius: 10px 0 10px 10px;
+}
+.timeline   ul li:nth-child(odd)::before{
+    right: -40px;
+    transform: translate(50%,-50%);
+}
+.timeline   ul li:nth-child(even)::before{
+    left: -40px;
+    transform: translate(-50%,-50%);
+}
+.timeline ul li:nth-child(even){
+    float: right;
+    clear: left;
+    border-radius: 0 10px 10px 10px;
+}
+.timeline .back-to-top{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.timeline .back-to-top i{
+    color: #000;
+    transform: scale(0.8);
+}
+.timeline .back-to-top:hover {
+    background-color: #fde100;
+}
+.timeline .back-to-top:hover i{
+    transform: scale(1);
+}
